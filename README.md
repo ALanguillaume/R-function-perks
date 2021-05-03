@@ -4,4 +4,6 @@
 # The perks of writing functions
 
 <!-- badges: start -->
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ALanguillaume/writing-functions-perks/HEAD)
 <!-- badges: end -->

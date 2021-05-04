@@ -43,20 +43,23 @@
   --header-h3-font-size: 1.75rem;
 
   /* Colors */
-  --text-color: #839496;
-  --header-color: #dc322f;
-  --background-color: #002b36;
-  --link-color: #b58900;
-  --text-bold-color: #d33682;
-  --code-highlight-color: #268bd240;
-  --inverse-text-color: #002b36;
-  --inverse-background-color: #fdf6e3;
-  --inverse-header-color: #002b36;
-  --inverse-link-color: #b58900;
-  --title-slide-background-color: #fdf6e3;
-  --title-slide-text-color: #002b36;
-  --header-background-color: #dc322f;
-  --header-background-text-color: #002b36;
+  --text-color: #FFFFFF;
+  --header-color: #3C989E;
+  --background-color: #050F0F;
+  --link-color: #3C989E;
+  --text-bold-color: #3C989E;
+  --code-highlight-color: rgba(255,255,0,0.5);
+  --inverse-text-color: #050F0F;
+  --inverse-background-color: #3C989E;
+  --inverse-header-color: #050F0F;
+  --inverse-link-color: #3C989E;
+  --title-slide-background-color: #3C989E;
+  --title-slide-text-color: #050F0F;
+  --header-background-color: #3C989E;
+  --header-background-text-color: #050F0F;
+  --base: #3C989E;
+  --white: #FFFFFF;
+  --black: #050F0F;
 }
 
 html {
@@ -97,10 +100,10 @@ h1, h2, h3 {
 }
 .remark-inline-code {
   font-size: var(--code-inline-font-size);
-  color: #6c71c4;
+  color: #3C989E;
 }
 .remark-slide-number {
-  color: #586e75;
+  color: #3C989E;
   opacity: 1;
   font-size: 0.9em;
 }
@@ -145,10 +148,10 @@ a, a > code {
   float: left;
 }
 .left-column h2, .left-column h3 {
-  color: #586e75;
+  color: #3C989E99;
 }
 .left-column h2:last-of-type, .left-column h3:last-child {
-  color: #93a1a1;
+  color: #3C989E;
 }
 .right-column {
   width: 75%;
@@ -170,22 +173,22 @@ img, video, iframe {
   max-width: 100%;
 }
 blockquote {
-  border-left: solid 5px #cb4b16;
+  border-left: solid 5px #3C989E80;
   padding-left: 1em;
 }
 .remark-slide table {
   margin: auto;
-  border-top: 1px solid #657b83;
-  border-bottom: 1px solid #657b83;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
 }
 .remark-slide table thead th {
-  border-bottom: 1px solid #657b83;
+  border-bottom: 1px solid #ddd;
 }
 th, td {
   padding: 5px;
 }
 .remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) {
-  background: #073642;
+  background: #0B1E1F;
 }
 table.dataTable tbody {
   background-color: var(--background-color);
@@ -195,7 +198,7 @@ table.dataTable.display tbody tr.odd {
   background-color: var(--background-color);
 }
 table.dataTable.display tbody tr.even {
-  background-color: #073642;
+  background-color: #0B1E1F;
 }
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5);
@@ -235,4 +238,22 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   }
 }
 
+.base {
+  color: var(--base);
+}
+.bg-base {
+  background-color: var(--base);
+}
+.white {
+  color: var(--white);
+}
+.bg-white {
+  background-color: var(--white);
+}
+.black {
+  color: var(--black);
+}
+.bg-black {
+  background-color: var(--black);
+}
 

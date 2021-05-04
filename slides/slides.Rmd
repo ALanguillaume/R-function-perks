@@ -5,10 +5,10 @@ author: "Antoine Languillaume"
 date: "2021/05/07"
 output:
   xaringan::moon_reader:
-    css: ["xaringan-themer.css"]
+    css: [xaringan-themer.css, style.css]
     lib_dir: libs
     nature:
-      highlightStyle: solarized-dark
+      # highlightStyle: solarized-dark
       highlightLines: true
       ratio: 16:9
       countIncrementalSlides: false
@@ -20,7 +20,8 @@ options(htmltools.dir.version = FALSE)
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
-style_solarized_dark(
+style_mono_accent_inverse(
+  base_color = "#3C989E",
   header_font_google = google_font("Josefin Sans"),
   text_font_google   = google_font("Montserrat", "300", "300i"),
   code_font_google   = google_font("Fira Mono")
@@ -36,12 +37,16 @@ class: inverse, center, middle
 
 --
 
-```{r eval=FALSE, tidy=FALSE}
+### Everybody uses functions
+
+```{r, tidy=FALSE}
 x <- c(4, 2, 4, 6)
 mean(x)
 ```
 
 --
+
+### Because nobody will find that useful
 
 ```{r eval=FALSE, tidy=FALSE}
 (4 + 2 + 4 + 6) / 4
@@ -49,79 +54,224 @@ mean(x)
 
 ---
 
-## Function's Anatomy
+## Functions are:
 
-<style>
-.focus {
- color: tomato;
-}
+* Software atoms
+
+* Recipes for a given computation
+
+---
+class: inverse, center, middle
+
+# Function's Anatomy
+
+---
+
 .function[
+.dimmed[.focus[name] <- function(arg_1, arg_2 = "default_value") {
 
+ 
+
+return(result)
+
+}
 ]
-</style>
+]
 
-.function[
+.function_components[
+.dimmed[
+.focus[meaningful name]
 
-.focus[name] <- function(argument_1) {
+function key word
 
-`# body`
+arguments
 
-   return(result)
-    
-}
+body
 
+optional return statement
+]
 ]
 
 
 ---
 
-<style>
-.focus {
- color: tomato;
-}
 .function[
+.dimmed[
+name <- .focus[function](arg_1, arg_2 = "default_value") {
 
+  .# body
+
+return(result)
+
+}
 ]
-</style>
+]
+
+.function_components[
+.dimmed[
+meaningful name
+
+.focus[function key word]
+
+arguments
+
+body
+
+optional return statement
+]
+]
+
+---
 
 .function[
+.dimmed[
+name <- function(.focus[arg_1, arg_2 = "default_value"]) {
 
-name <- .focus[function](argument_1) {
+  .# body
 
-`# body`
+return(result)
 
-   return(result)
-    
 }
-
 ]
+]
+
+.function_components[
+.dimmed[
+meaningful name
+
+function key word
+
+.focus[arguments]
+
+body
+
+optional return statement
+]
+]
+
+---
+
+.function[
+.dimmed[
+name <- function(arg_1, arg_2 = "default_value") {
+
+  .focus[.# body]
+
+return(result)
+
+}
+]
+]
+
+.function_components[
+.dimmed[
+meaningful name
+
+function key word
+
+arguments
+
+.focus[body]
+
+optional return statement
+]
+]
+
+---
+
+.function[
+.dimmed[
+name <- function(arg_1, arg_2 = "default_value") {
+]
+
+ temp_var <- do_something(arg_1)
+
+full_results <- combine_stuff(temp_var, arg_2)
+
+result <- full_results["important_part"]
+  
+.dimmed[
+return(result)
+
+}]
+]
+
+
+.function_components[
+.dimmed[
+meaningful name
+
+function key word
+
+arguments
+
+.focus[body]
+
+optional return statement
+]
+]
+
+
 
 
 ---
+
+.function[
+.dimmed[
+name <- function(arg_1, arg_2 = "default_value") {
+
+  .# body
+
+  .focus[return(result)]
+
+}
+]
+]
+
+.function_components[
+.dimmed[
+meaningful name
+
+function key word
+
+arguments
+
+body
+
+.focus[optional return statement]
+]
+]
+
+---
+class: inverse, center, middle
+
+# Let's code !
 
 ---
 
 class: middle
 
+.pull-left[
 ```{r, eval=FALSE}
 # Chocolate cupcakes
 melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar) 
+dough <- mix(melted_butter, eggs, flour, sugar)
 flavoured_dough <- dough + chocolate
 cupcakes <- cook(flavoured_dough)
 
 # Vanilla cupcakes
 melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar) 
+dough <- mix(melted_butter, eggs, flour, sugar)
 flavoured_dough <- dough + vanilla
 cupcakes <- cook(flavoured_dough)
 
 # Blueberry cupcakes
 melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar) 
+dough <- mix(melted_butter, eggs, flour, sugar)
 flavoured_dough <- dough + blueberries
 cupcakes <- cook(flavoured_dough)
 ```
+]
 
 ---
 
@@ -154,15 +304,52 @@ cupcakes <- cook(flavoured_dough)
 class: middle
 
 <style>
-.pull-left {
-  float: left;
-  width: 48%;
+
+</style>
+
+.pull-left[
+```{r, eval=FALSE}
+# Chocolate cupcakes
+melted_butter <- melt(butter)
+dough <- mix(melted_butter, eggs, flour, sugar)
+flavoured_dough <- dough + chocolate #<<
+cupcakes <- cook(flavoured_dough)
+
+# Vanilla cupcakes
+melted_butter <- melt(butter)
+dough <- mix(melted_butter, eggs, flour, sugar)
+flavoured_dough <- dough + vanilla #<<
+cupcakes <- cook(flavoured_dough)
+
+# Blueberry cupcakes
+melted_butter <- melt(butter)
+dough <- mix(melted_butter, eggs, flour, sugar)
+flavoured_dough <- dough + blueberries #<<
+cupcakes <- cook(flavoured_dough)
+```
+]
+
+.pull-right[
+```{r, eval = FALSE}
+bake_cupcakes <- function(special_ingredient,
+                          base_ingredients) {
+	melted_butter <- melt(base_ingredients$butter)
+	other_ingredients <-
+	  base_ingredients[c("eggs", "flour", "sugar")]
+	dough <- mix(melted_butter, other_ingredients)
+    flavoured_dough <- dough + special_ingredient
+	cupcakes <- cook(flavoured_dough)
+	return(cupcakes)
 }
-.pull-right {
-  <!-- padding: 100px 0; -->
-  float: right;
-  width: 52%;
-}
+```
+]
+
+---
+
+class: middle
+
+<style>
+
 </style>
 
 .pull-left[
@@ -207,6 +394,19 @@ bake_cupcakes <- function(special_ingredient,
 
 class: middle
 
+```{r, eval = FALSE}
+bake_cupcakes <- function(special_ingredient, base_ingredients) {
+	melted_butter <- melt(base_ingredients$butter)
+	other_ingredients <- base_ingredients[c("eggs", "flour", "sugar")]
+	dough <- mix(melted_butter, other_ingredients)
+    flavoured_dough <- dough + special_ingredient
+	cupcakes <- cook(flavoured_dough)
+	return(cupcakes)
+}
+```
+
+--
+
 ```{r, eval=FALSE}
 base_ingredients <- c(butter = butter, eggs = eggs, flour = flour, sugar = sugar)
 
@@ -219,3 +419,14 @@ for (item in special_ingredient) {
 
 ```
 
+---
+class: inverse, center, middle
+
+# Let's code again!
+
+---
+
+Functions can be documented
+
+
+---

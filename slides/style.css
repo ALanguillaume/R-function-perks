@@ -1,0 +1,36 @@
+
+.focus {
+ color: tomato;
+ font-weight: bolder;
+}
+
+.dimmed {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.function {
+  font-size: 25px;
+  font-weight: bold;
+  position: absolute;
+  top: 200px;
+  left: 50px;
+}
+
+.function_components {
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 150px;
+  right: 75px;
+}
+
+.pull-left {
+  float: left;
+  width: 48%;
+}
+
+.pull-right {
+  <!-- padding: 100px 0; -->
+  float: right;
+  width: 52%;
+}

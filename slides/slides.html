@@ -6,6 +6,7 @@
     <meta name="author" content="Antoine Languillaume" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -31,13 +32,21 @@ class: inverse, center, middle
 
 --
 
+### Everybody uses functions
+
 
 ```r
 x &lt;- c(4, 2, 4, 6)
 mean(x)
 ```
 
+```
+## [1] 4
+```
+
 --
+
+### Because nobody will find that useful
 
 
 ```r
@@ -46,80 +55,225 @@ mean(x)
 
 ---
 
-## Function's Anatomy
+## Functions are:
 
-&lt;style&gt;
-.focus {
- color: tomato;
-}
+* Software atoms
+
+* Recipes for a given computation
+
+---
+class: inverse, center, middle
+
+# Function's Anatomy
+
+---
+
 .function[
+.dimmed[.focus[name] &lt;- function(arg_1, arg_2 = "default_value") {
 
+ 
+
+return(result)
+
+}
 ]
-&lt;/style&gt;
+]
 
-.function[
+.function_components[
+.dimmed[
+.focus[meaningful name]
 
-.focus[name] &lt;- function(argument_1) {
+function key word
 
-`# body`
+arguments
 
-   return(result)
-    
-}
+body
 
+optional return statement
+]
 ]
 
 
 ---
 
-&lt;style&gt;
-.focus {
- color: tomato;
-}
 .function[
+.dimmed[
+name &lt;- .focus[function](arg_1, arg_2 = "default_value") {
 
+  .# body
+
+return(result)
+
+}
 ]
-&lt;/style&gt;
+]
+
+.function_components[
+.dimmed[
+meaningful name
+
+.focus[function key word]
+
+arguments
+
+body
+
+optional return statement
+]
+]
+
+---
 
 .function[
+.dimmed[
+name &lt;- function(.focus[arg_1, arg_2 = "default_value"]) {
 
-name &lt;- .focus[function](argument_1) {
+  .# body
 
-`# body`
+return(result)
 
-   return(result)
-    
 }
-
 ]
+]
+
+.function_components[
+.dimmed[
+meaningful name
+
+function key word
+
+.focus[arguments]
+
+body
+
+optional return statement
+]
+]
+
+---
+
+.function[
+.dimmed[
+name &lt;- function(arg_1, arg_2 = "default_value") {
+
+  .focus[.# body]
+
+return(result)
+
+}
+]
+]
+
+.function_components[
+.dimmed[
+meaningful name
+
+function key word
+
+arguments
+
+.focus[body]
+
+optional return statement
+]
+]
+
+---
+
+.function[
+.dimmed[
+name &lt;- function(arg_1, arg_2 = "default_value") {
+]
+
+ temp_var &lt;- do_something(arg_1)
+
+full_results &lt;- combine_stuff(temp_var, arg_2)
+
+result &lt;- full_results["important_part"]
+  
+.dimmed[
+return(result)
+
+}]
+]
+
+
+.function_components[
+.dimmed[
+meaningful name
+
+function key word
+
+arguments
+
+.focus[body]
+
+optional return statement
+]
+]
+
+
 
 
 ---
+
+.function[
+.dimmed[
+name &lt;- function(arg_1, arg_2 = "default_value") {
+
+  .# body
+
+  .focus[return(result)]
+
+}
+]
+]
+
+.function_components[
+.dimmed[
+meaningful name
+
+function key word
+
+arguments
+
+body
+
+.focus[optional return statement]
+]
+]
+
+---
+class: inverse, center, middle
+
+# Let's code !
 
 ---
 
 class: middle
 
+.pull-left[
 
 ```r
 # Chocolate cupcakes
 melted_butter &lt;- melt(butter)
-dough &lt;- mix(melted_butter, eggs, flour, sugar) 
+dough &lt;- mix(melted_butter, eggs, flour, sugar)
 flavoured_dough &lt;- dough + chocolate
 cupcakes &lt;- cook(flavoured_dough)
 
 # Vanilla cupcakes
 melted_butter &lt;- melt(butter)
-dough &lt;- mix(melted_butter, eggs, flour, sugar) 
+dough &lt;- mix(melted_butter, eggs, flour, sugar)
 flavoured_dough &lt;- dough + vanilla
 cupcakes &lt;- cook(flavoured_dough)
 
 # Blueberry cupcakes
 melted_butter &lt;- melt(butter)
-dough &lt;- mix(melted_butter, eggs, flour, sugar) 
+dough &lt;- mix(melted_butter, eggs, flour, sugar)
 flavoured_dough &lt;- dough + blueberries
 cupcakes &lt;- cook(flavoured_dough)
 ```
+]
 
 ---
 
@@ -153,15 +307,54 @@ cupcakes &lt;- cook(flavoured_dough)
 class: middle
 
 &lt;style&gt;
-.pull-left {
-  float: left;
-  width: 48%;
+
+&lt;/style&gt;
+
+.pull-left[
+
+```r
+# Chocolate cupcakes
+melted_butter &lt;- melt(butter)
+dough &lt;- mix(melted_butter, eggs, flour, sugar)
+*flavoured_dough &lt;- dough + chocolate
+cupcakes &lt;- cook(flavoured_dough)
+
+# Vanilla cupcakes
+melted_butter &lt;- melt(butter)
+dough &lt;- mix(melted_butter, eggs, flour, sugar)
+*flavoured_dough &lt;- dough + vanilla
+cupcakes &lt;- cook(flavoured_dough)
+
+# Blueberry cupcakes
+melted_butter &lt;- melt(butter)
+dough &lt;- mix(melted_butter, eggs, flour, sugar)
+*flavoured_dough &lt;- dough + blueberries
+cupcakes &lt;- cook(flavoured_dough)
+```
+]
+
+.pull-right[
+
+```r
+bake_cupcakes &lt;- function(special_ingredient,
+                          base_ingredients) {
+	melted_butter &lt;- melt(base_ingredients$butter)
+	other_ingredients &lt;-
+	  base_ingredients[c("eggs", "flour", "sugar")]
+	dough &lt;- mix(melted_butter, other_ingredients)
+    flavoured_dough &lt;- dough + special_ingredient
+	cupcakes &lt;- cook(flavoured_dough)
+	return(cupcakes)
 }
-.pull-right {
-  &lt;!-- padding: 100px 0; --&gt;
-  float: right;
-  width: 52%;
-}
+```
+]
+
+---
+
+class: middle
+
+&lt;style&gt;
+
 &lt;/style&gt;
 
 .pull-left[
@@ -210,6 +403,20 @@ class: middle
 
 
 ```r
+bake_cupcakes &lt;- function(special_ingredient, base_ingredients) {
+	melted_butter &lt;- melt(base_ingredients$butter)
+	other_ingredients &lt;- base_ingredients[c("eggs", "flour", "sugar")]
+	dough &lt;- mix(melted_butter, other_ingredients)
+    flavoured_dough &lt;- dough + special_ingredient
+	cupcakes &lt;- cook(flavoured_dough)
+	return(cupcakes)
+}
+```
+
+--
+
+
+```r
 base_ingredients &lt;- c(butter = butter, eggs = eggs, flour = flour, sugar = sugar)
 
 special_ingredients &lt;- c("chocolate", "vanilla", "blueberries")
@@ -220,11 +427,21 @@ for (item in special_ingredient) {
 }
 ```
 
+---
+class: inverse, center, middle
+
+# Let's code again!
+
+---
+
+Functions can be documented
+
+
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "solarized-dark",
 "highlightLines": true,
 "ratio": "16:9",
 "countIncrementalSlides": false

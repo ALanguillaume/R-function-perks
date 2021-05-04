@@ -1,0 +1,221 @@
+---
+title: "The Perks of Writing Functions"
+subtitle: "" 
+author: "Antoine Languillaume"
+date: "2021/05/07"
+output:
+  xaringan::moon_reader:
+    css: ["xaringan-themer.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: solarized-dark
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_solarized_dark(
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+---
+class: inverse, center, middle
+
+# Before Anything: Launch Binder
+
+---
+
+--
+
+```{r eval=FALSE, tidy=FALSE}
+x <- c(4, 2, 4, 6)
+mean(x)
+```
+
+--
+
+```{r eval=FALSE, tidy=FALSE}
+(4 + 2 + 4 + 6) / 4
+```
+
+---
+
+## Function's Anatomy
+
+<style>
+.focus {
+ color: tomato;
+}
+.function[
+
+]
+</style>
+
+.function[
+
+.focus[name] <- function(argument_1) {
+
+`# body`
+
+   return(result)
+    
+}
+
+]
+
+
+---
+
+<style>
+.focus {
+ color: tomato;
+}
+.function[
+
+]
+</style>
+
+.function[
+
+name <- .focus[function](argument_1) {
+
+`# body`
+
+   return(result)
+    
+}
+
+]
+
+
+---
+
+---
+
+class: middle
+
+```{r, eval=FALSE}
+# Chocolate cupcakes
+melted_butter <- melt(butter)
+dough <- mix(melted_butter, eggs, flour, sugar) 
+flavoured_dough <- dough + chocolate
+cupcakes <- cook(flavoured_dough)
+
+# Vanilla cupcakes
+melted_butter <- melt(butter)
+dough <- mix(melted_butter, eggs, flour, sugar) 
+flavoured_dough <- dough + vanilla
+cupcakes <- cook(flavoured_dough)
+
+# Blueberry cupcakes
+melted_butter <- melt(butter)
+dough <- mix(melted_butter, eggs, flour, sugar) 
+flavoured_dough <- dough + blueberries
+cupcakes <- cook(flavoured_dough)
+```
+
+---
+
+class: middle
+
+.pull-left[
+```{r, eval=FALSE}
+# Chocolate cupcakes
+melted_butter <- melt(butter)
+dough <- mix(melted_butter, eggs, flour, sugar)
+flavoured_dough <- dough + chocolate #<<
+cupcakes <- cook(flavoured_dough)
+
+# Vanilla cupcakes
+melted_butter <- melt(butter)
+dough <- mix(melted_butter, eggs, flour, sugar)
+flavoured_dough <- dough + vanilla #<<
+cupcakes <- cook(flavoured_dough)
+
+# Blueberry cupcakes
+melted_butter <- melt(butter)
+dough <- mix(melted_butter, eggs, flour, sugar)
+flavoured_dough <- dough + blueberries #<<
+cupcakes <- cook(flavoured_dough)
+```
+]
+
+---
+
+class: middle
+
+<style>
+.pull-left {
+  float: left;
+  width: 48%;
+}
+.pull-right {
+  <!-- padding: 100px 0; -->
+  float: right;
+  width: 52%;
+}
+</style>
+
+.pull-left[
+```{r, eval=FALSE}
+# Chocolate cupcakes
+melted_butter <- melt(butter)
+dough <- mix(melted_butter, eggs, flour, sugar)
+flavoured_dough <- dough + chocolate #<<
+cupcakes <- cook(flavoured_dough)
+
+# Vanilla cupcakes
+melted_butter <- melt(butter)
+dough <- mix(melted_butter, eggs, flour, sugar)
+flavoured_dough <- dough + vanilla #<<
+cupcakes <- cook(flavoured_dough)
+
+# Blueberry cupcakes
+melted_butter <- melt(butter)
+dough <- mix(melted_butter, eggs, flour, sugar)
+flavoured_dough <- dough + blueberries #<<
+cupcakes <- cook(flavoured_dough)
+```
+]
+
+.pull-right[
+```{r, eval = FALSE}
+bake_cupcakes <- function(special_ingredient,
+                          base_ingredients) {
+	melted_butter <- melt(base_ingredients$butter)
+	other_ingredients <-
+	  base_ingredients[c("eggs", "flour", "sugar")]
+	dough <- mix(melted_butter, other_ingredients)
+    flavoured_dough <- dough + special_ingredient #<<
+	cupcakes <- cook(flavoured_dough)
+	return(cupcakes)
+}
+```
+]
+
+
+---
+
+class: middle
+
+```{r, eval=FALSE}
+base_ingredients <- c(butter = butter, eggs = eggs, flour = flour, sugar = sugar)
+
+special_ingredients <- c("chocolate", "vanilla", "blueberries")
+
+for (item in special_ingredient) {
+  bake_cupcakes(special_ingredient = item, 
+                base_ingredients)
+}
+
+```
+

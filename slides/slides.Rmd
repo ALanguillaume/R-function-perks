@@ -56,14 +56,22 @@ mean(x)
 
 ## Functions are:
 
+```{r, tidy=FALSE}
+mean(x)
+```
+
+.list[
 * Software atoms
 
 * Recipes for a given computation
 
+* Take arguments and return result
+]
+
 ---
 class: inverse, center, middle
 
-# Function's Anatomy
+# Anatomy of a Function
 
 ---
 
@@ -248,185 +256,34 @@ class: inverse, center, middle
 # Let's code !
 
 ---
-
-class: middle
-
-.pull-left[
-```{r, eval=FALSE}
-# Chocolate cupcakes
-melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar)
-flavoured_dough <- dough + chocolate
-cupcakes <- cook(flavoured_dough)
-
-# Vanilla cupcakes
-melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar)
-flavoured_dough <- dough + vanilla
-cupcakes <- cook(flavoured_dough)
-
-# Blueberry cupcakes
-melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar)
-flavoured_dough <- dough + blueberries
-cupcakes <- cook(flavoured_dough)
-```
-]
-
----
-
-class: middle
-
-.pull-left[
-```{r, eval=FALSE}
-# Chocolate cupcakes
-melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar)
-flavoured_dough <- dough + chocolate #<<
-cupcakes <- cook(flavoured_dough)
-
-# Vanilla cupcakes
-melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar)
-flavoured_dough <- dough + vanilla #<<
-cupcakes <- cook(flavoured_dough)
-
-# Blueberry cupcakes
-melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar)
-flavoured_dough <- dough + blueberries #<<
-cupcakes <- cook(flavoured_dough)
-```
-]
-
----
-
-class: middle
-
-<style>
-
-</style>
-
-.pull-left[
-```{r, eval=FALSE}
-# Chocolate cupcakes
-melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar)
-flavoured_dough <- dough + chocolate #<<
-cupcakes <- cook(flavoured_dough)
-
-# Vanilla cupcakes
-melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar)
-flavoured_dough <- dough + vanilla #<<
-cupcakes <- cook(flavoured_dough)
-
-# Blueberry cupcakes
-melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar)
-flavoured_dough <- dough + blueberries #<<
-cupcakes <- cook(flavoured_dough)
-```
-]
-
-.pull-right[
-```{r, eval = FALSE}
-bake_cupcakes <- function(special_ingredient,
-                          base_ingredients) {
-	melted_butter <- melt(base_ingredients$butter)
-	other_ingredients <-
-	  base_ingredients[c("eggs", "flour", "sugar")]
-	dough <- mix(melted_butter, other_ingredients)
-    flavoured_dough <- dough + special_ingredient
-	cupcakes <- cook(flavoured_dough)
-	return(cupcakes)
-}
-```
-]
-
----
-
-class: middle
-
-<style>
-
-</style>
-
-.pull-left[
-```{r, eval=FALSE}
-# Chocolate cupcakes
-melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar)
-flavoured_dough <- dough + chocolate #<<
-cupcakes <- cook(flavoured_dough)
-
-# Vanilla cupcakes
-melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar)
-flavoured_dough <- dough + vanilla #<<
-cupcakes <- cook(flavoured_dough)
-
-# Blueberry cupcakes
-melted_butter <- melt(butter)
-dough <- mix(melted_butter, eggs, flour, sugar)
-flavoured_dough <- dough + blueberries #<<
-cupcakes <- cook(flavoured_dough)
-```
-]
-
-.pull-right[
-```{r, eval = FALSE}
-bake_cupcakes <- function(special_ingredient,
-                          base_ingredients) {
-	melted_butter <- melt(base_ingredients$butter)
-	other_ingredients <-
-	  base_ingredients[c("eggs", "flour", "sugar")]
-	dough <- mix(melted_butter, other_ingredients)
-    flavoured_dough <- dough + special_ingredient #<<
-	cupcakes <- cook(flavoured_dough)
-	return(cupcakes)
-}
-```
-]
-
-
----
-
-class: middle
-
-```{r, eval = FALSE}
-bake_cupcakes <- function(special_ingredient, base_ingredients) {
-	melted_butter <- melt(base_ingredients$butter)
-	other_ingredients <- base_ingredients[c("eggs", "flour", "sugar")]
-	dough <- mix(melted_butter, other_ingredients)
-    flavoured_dough <- dough + special_ingredient
-	cupcakes <- cook(flavoured_dough)
-	return(cupcakes)
-}
-```
-
---
-
-```{r, eval=FALSE}
-base_ingredients <- c(butter = butter, eggs = eggs, flour = flour, sugar = sugar)
-
-special_ingredients <- c("chocolate", "vanilla", "blueberries")
-
-for (item in special_ingredient) {
-  bake_cupcakes(special_ingredient = item, 
-                base_ingredients)
-}
-
-```
-
----
 class: inverse, center, middle
 
-# Let's code again!
+# DRY
 
 ---
 
-Functions can be documented
+class: inverse, center, middle
 
+# Documentation
+
+---
+
+# Wrap up
+
+.list[
+* Basic Anatomy (name, arguments, body, output)
+
+* Capture pattern (DRY)
+
+* Can be documented (Roxygen2 syntax)
+
+* Building blocks of efficient code
+]
+
+---
+
+class: inverse, center, middle
+
+# Thanks a lot and keep coding !
 
 ---

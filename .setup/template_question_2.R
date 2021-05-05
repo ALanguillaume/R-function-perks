@@ -7,9 +7,8 @@
 #'
 #' '________________________________'
 #'
-#' @'_______' x A '______'.
-#'
-
+#' @'_______' x  '______'.
+#' @param n  An integer indicating the power rank.
 raise_to_power <- function(x, n = 2) {
   result <- x ^ n
   return(result)

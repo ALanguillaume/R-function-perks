@@ -8,10 +8,13 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ALanguillaume/writing-functions-perks/HEAD)
 <!-- badges: end -->
 
-This repo contains the materials for a small R lesson about the perks of
-writing R functions.
+## Abstract
 
-## Important
+This 20 mins lighthing talk will get you familiar with R essential
+building block: functions. We will see what they are and why they are
+essential to efficiently get your work done.
+
+### Important
 
 Before or at the beginning of the lesson click on the Binder button
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ALanguillaume/writing-functions-perks/HEAD)

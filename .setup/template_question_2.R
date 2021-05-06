@@ -1,8 +1,8 @@
 
-# Fill in the blanks ('_____') with:
-# . Congratulate a friend
+#' Fill in the blanks _____ with:
 # . @param
 # . character string
+# . Congratulate a friend
 # . @return
 
 #' '_____'

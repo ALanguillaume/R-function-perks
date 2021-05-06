@@ -1,9 +1,10 @@
 
-# Fill in the blanks ('_____') with:
-# . congratulate_friend
+# Fill in the blanks _____ with:
 # . function
-# . name_friend
 # . return
+# . name_friend
+# . congratulate_friend
+
 
 '_____' <- '_____'('_____') {
   congratulations <- paste("Congrats", name_friend, "!")

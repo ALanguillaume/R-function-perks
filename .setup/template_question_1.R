@@ -6,9 +6,9 @@
 # . congratulate_friend
 
 
-'_____' <- '_____'('_____') {
+_____ <- _____(_____) {
   congratulations <- paste("Congrats", name_friend, "!")
-  '_____'(congratulations)
+  _____(congratulations)
 }
 
 # This should return 'Congrats Bob !'

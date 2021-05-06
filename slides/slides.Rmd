@@ -45,7 +45,7 @@ mean(x)
 
 --
 
-### Because nobody will find that useful
+### Because nobody will find this useful:
 
 ```{r eval=FALSE, tidy=FALSE}
 (4 + 2 + 4 + 6) / 4

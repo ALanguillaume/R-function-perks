@@ -1,15 +1,13 @@
 
-# Time to write documentation for raise_to_power() !
-# Fill in the blanks ('_____')
+# Fill in the blanks ('_____') with:
+# . Congratulate a friend
+# . @param
+# . character string
 
-
-#' '____________________'
-#'
-#' '________________________________'
-#'
-#' @'_______' x  '______'.
-#' @param n  An integer indicating the power rank.
-raise_to_power <- function(x, n = 2) {
-  result <- x ^ n
-  return(result)
+#' '_____________________'
+#' 
+#' '______' friend A '________________' of the name of your friend
+congratulate_friend <- function(friend) {
+  congratulations <- paste("Congrats", friend, "!")
+  return(congratulations)
 }

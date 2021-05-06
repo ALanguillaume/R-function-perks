@@ -10,9 +10,9 @@
 
 ## Abstract
 
-This 20 mins lighthing talk will get you familiar with R essential
-building block: functions. We will see what they are and why they are
-essential to efficiently get your work done.
+This 20-min talk will get you familiar with R essential building block:
+functions. We will see what they are and why they are essential to
+efficiently get your work done.
 
 ### Important
 

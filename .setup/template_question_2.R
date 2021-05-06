@@ -5,10 +5,10 @@
 # . character string
 # . @return
 
-#' '_____________________'
+#' '_____'
 #' 
-#' '______' name_friend A '________________' of the name of your friend.
-#' '_______' A character string : 'Congrats {name_friend} !'.
+#' '_____' name_friend A '_____' of the name of your friend.
+#' '_____' A character string : 'Congrats {name_friend} !'.
 congratulate_friend <- function(name_friend) {
   congratulations <- paste("Congrats", name_friend, "!")
   return(congratulations)

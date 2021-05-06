@@ -8,7 +8,6 @@ output:
     css: [xaringan-themer.css, style.css]
     lib_dir: libs
     nature:
-      # highlightStyle: solarized-dark
       highlightLines: true
       ratio: 16:9
       countIncrementalSlides: false
@@ -287,6 +286,26 @@ class: inverse, center, middle
 class: inverse, center, middle
 
 # Documentation
+
+---
+# Documenting functions
+
+.list[
+* Make explicit
+
+  - What it does ?
+  - What does it take as input (args/parameters) ?
+  - What does it return ?
+
+* Special syntax (Roxygen2)
+]
+
+---
+
+class: center, middle
+
+# Your turn again !
+
 
 ---
 

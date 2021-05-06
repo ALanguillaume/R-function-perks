@@ -6,7 +6,7 @@
 # . return
 
 '_________________' <- '_______'('_________') {
-  congratulations <- paste("Congrats", friend, "!")
+  congratulations <- paste("Congrats", name_friend, "!")
   '______'(congratulations)
 }
 

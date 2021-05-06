@@ -7,9 +7,9 @@
 
 #' '_____________________'
 #' 
-#' '______' friend A '________________' of the name of your friend.
+#' '______' name_friend A '________________' of the name of your friend.
 #' '_______' A character string : 'Congrats {name_friend} !'.
-congratulate_friend <- function(friend) {
-  congratulations <- paste("Congrats", friend, "!")
+congratulate_friend <- function(name_friend) {
+  congratulations <- paste("Congrats", name_friend, "!")
   return(congratulations)
 }

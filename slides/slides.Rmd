@@ -61,11 +61,11 @@ mean(x)
 ```
 
 .list[
-* Software atoms
+* Take arguments and return result
 
 * Recipes for a given computation
 
-* Take arguments and return result
+* Software atoms
 ]
 
 ---
@@ -255,10 +255,32 @@ class: inverse, center, middle
 
 # Let's code !
 
+
+---
+class: center, middle
+
+# Your turn !
+
 ---
 class: inverse, center, middle
 
-# DRY
+# A Realistic Example
+
+---
+
+# Ali Berry Inc.
+
+.ali-berry-list[
+.list[
+* France, Spain and Italy
+
+* Yearly site-production reports
+]
+]
+
+.aliberry-image[
+![aliberry](figures/aliberry-logo.png)
+]
 
 ---
 

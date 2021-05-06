@@ -29,13 +29,13 @@
   right: 75px;
 }
 
-.pull-left {
-  float: left;
-  width: 48%;
+.ali-berry-list {
+  position: absolute;
+  top: 150px;
+  left: 50px;
 }
-
-.pull-right {
-  <!-- padding: 100px 0; -->
-  float: right;
-  width: 52%;
+.aliberry-image {
+  position: absolute;
+  bottom: 175px;
+  right: 50px;
 }
